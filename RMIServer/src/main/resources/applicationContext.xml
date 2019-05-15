@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:soa="http://www.ctrip.com/schema/soa"
+       xmlns:qconfig="http://www.qunar.com/schema/qconfig"
+       xmlns:qmq="http://www.qunar.com/schema/qmq"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd"><!-- 加入携程的spring自定义标签 -->
+ 	
+ 	<!-- 接口实现类 -->
+ 	 <bean id="accountService" class="com.spring.service.AccountServiceImpl">
+	</bean>
+
+	<bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+	    <!-- does not necessarily have to be the same name as the bean to be exported -->
+	    <property name="serviceName" value="AccountService"/>
+	    <property name="service" ref="accountService"/>
+	    <property name="serviceInterface" value="com.spring.service.AccountService"/>
+	    <!-- defaults to 1099 -->
+	    <property name="registryPort" value="1199"/>
+	</bean>
+    
+</beans>

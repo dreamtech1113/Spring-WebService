@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 	
+ 	<!-- <bean class="com.spring.controller.HessianController">
+    	<property name="accountService" ref="accountService"/>
+	</bean>
+	远程服务代理
+	<bean id="accountService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+	    <property name="serviceUrl" value="http://localhost:8080/hessian_server/hessian/accountExporter"/>
+	    <property name="serviceInterface" value="com.spring.service.AccountService"/>
+	</bean> -->
+     <!-- <context:component-scan base-package="com.spring"/> -->
+</beans>
